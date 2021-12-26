@@ -1,8 +1,11 @@
-import App, { Container } from "next/app";
+import App from "next/app";
 import Head from "next/head";
 import styled, { createGlobalStyle } from "styled-components";
 import Nav from "../components/Nav";
 import { title } from "./_document";
+
+import "tailwindcss/tailwind.css";
+import "../styles/globals.css";
 
 // Any global CSS variables and selectors we want
 const GlobalStyle = createGlobalStyle`
@@ -43,13 +46,11 @@ export default class MyApp extends App {
         <Head>
           <title>{title}</title>
         </Head>
-        <Container>
-          <Nav />
-          <Main>
-            <Component {...pageProps} router={router} />
-          </Main>
-          <GlobalStyle />
-        </Container>
+        <Nav />
+        <Main>
+          <Component {...pageProps} router={router} />
+        </Main>
+        <GlobalStyle />
       </>
     );
   }

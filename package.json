@@ -1,7 +1,7 @@
 {
-  "name": "next-pwa-boilerplate",
-  "version": "1.3.0",
-  "description": "Start your progressive web app off with a perfect Google Lighthouse score.",
+  "name": "Random Thoughts",
+  "version": "1.0.0",
+  "description": "Example project using Nextjs with custom backend.",
   "main": "server/index.js",
   "scripts": {
     "build": "next build",
@@ -29,6 +29,9 @@
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.6"
+    "autoprefixer": "^10.4.0",
+    "babel-plugin-styled-components": "^1.10.6",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.7"
   }
 }
