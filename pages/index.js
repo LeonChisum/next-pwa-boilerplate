@@ -12,18 +12,16 @@ const Index = ({ posts }) => (
     <p>
       Check out the{" "}
       <a
-        href="https://github.com/pingboard/next-pwa-boilerplate"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
+        href='https://github.com/pingboard/next-pwa-boilerplate'
+        rel='noopener noreferrer'
+        target='_blank'>
         source code
       </a>{" "}
       and a more full{" "}
       <a
-        href="https://nextter.now.sh"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
+        href='https://nextter.now.sh'
+        rel='noopener noreferrer'
+        target='_blank'>
         example
       </a>{" "}
       for details.
@@ -33,19 +31,19 @@ const Index = ({ posts }) => (
       performant this app still is while using dynamic data sources:
     </p>
     <ul>
-      {posts.map(({ id, title }) => (
-        <li key={id}>{title}</li>
+      {posts.map(({ id, text }) => (
+        <li key={id}>{text}</li>
       ))}
     </ul>
   </>
 );
 
-Index.getInitialProps = async function() {
-  const fetchPosts = await fetch("https://jsonplaceholder.typicode.com/posts");
+Index.getInitialProps = async function () {
+  const fetchPosts = await fetch("http://localhost:8000/posts");
   const posts = await fetchPosts.json();
 
   return {
-    posts
+    posts,
   };
 };
 
